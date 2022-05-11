@@ -68,7 +68,7 @@ Response:
 
 ## Cancels a customer’s tea subscription
 
-### POST http://localhost:5000/api/v1/
+### PATCH http://localhost:5000/api/v1/
 ```
 JSON Raw Body: 
 
@@ -88,7 +88,7 @@ Response:
 ```
 ## Displays all of a customer’s subsciptions (active and cancelled)
 
-### PATCH http://localhost:5000/api/v1/
+### GET http://localhost:5000/api/v1/
 
 ```
 JSON Raw Body: 
