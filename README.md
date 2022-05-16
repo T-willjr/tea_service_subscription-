@@ -51,8 +51,10 @@
 ```
 JSON Raw Body: 
 
-{ 
-    "email": "test@gmail.com"
+{
+    "customer": "test@email.com",
+    "subscription": "2 Tea Plan",
+    "tea": "Green Tea"
 }
 
 ```
@@ -72,18 +74,23 @@ Response:
 ```
 JSON Raw Body: 
 
-{ 
-    
+{
+    "customer": "test@email.com",
+    "subscription_plan": "2 Tea Plan"
 }
 
 ```
 ```
 Response:
-[
-    {
-      
+{
+    "data": {
+        "type": "subscription",
+        "id": null,
+        "attributes": {
+            "message": "Your 2 Tea Plan has been successfully cancelled."
+        }
     }
-]
+}
 
 ```
 ## Displays all of a customer’s subsciptions (active and cancelled)
@@ -93,18 +100,39 @@ Response:
 ```
 JSON Raw Body: 
 
-{ 
-    
+{
+    "customer": "test@email.com"
 }
 
 ```
 ```
 Response:
-[
-    {
-      
+{
+    "data": {
+        "type": "subscriptions",
+        "id": null,
+        "attributes": [
+            {
+                "id": 1,
+                "title": "1 Tea",
+                "price": 10.0,
+                "status": "Cancelled",
+                "frequency": "Weekly",
+                "created_at": "2022-05-15T14:41:44.610Z",
+                "updated_at": "2022-05-16T12:40:11.761Z"
+            },
+            {
+                "id": 2,
+                "title": "2 Tea Plan",
+                "price": 20.0,
+                "status": "Cancelled",
+                "frequency": "Weekly",
+                "created_at": "2022-05-16T13:36:12.059Z",
+                "updated_at": "2022-05-16T13:38:22.362Z"
+            }
+        ]
     }
-]
+}
 
 ```
 
