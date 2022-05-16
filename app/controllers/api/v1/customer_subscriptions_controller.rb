@@ -1,4 +1,9 @@
-class Api::V1::CustomerSubscriptionController < ApplicationController 
+class Api::V1::CustomerSubscriptionsController < ApplicationController 
+  def index
+    customer = Customer.find_by!(email: params[:customer])
+    render json: CustomerSubscriptionSerializer.hashed_subscriptions(customer.subscriptions)
+  end 
+
   def create
     customer = Customer.find_by!(email: params[:customer])
     subscription = Subscription.find_by!(title: params[:subscription])
