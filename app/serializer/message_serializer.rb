@@ -13,5 +13,17 @@ class MessageSerializer
         }
       }
     end 
+
+    def hashed_subscription_cancelled(subscription_plan)
+      {
+        "data": {
+          "type": "subscription",
+          "id": nil,
+          "attributes": {
+            "message": "Your #{subscription_plan} has been successfully cancelled."
+          }
+        }
+      }
+    end 
   end
 end 

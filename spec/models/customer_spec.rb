@@ -9,8 +9,8 @@ RSpec.describe Customer do
   end
 
   describe "associations" do 
-    it { should have_one(:customer_subscription) }
-    it { should have_one(:subscription).through(:customer_subscription)}
-    it { should have_many(:teas).through(:subscription)}
+    it { should have_many(:customer_subscriptions) }
+    it { should have_many(:subscriptions).through(:customer_subscriptions)}
+    it { should have_many(:teas).through(:subscriptions)}
   end
 end 

@@ -5,7 +5,7 @@ RSpec.describe "Customer Subscriptions Request" do
     it "creates a customer tea subscription" do 
       tea = create(:tea)
       customer = create(:customer)
-      subscription = Subscription.create(title: "1 Tea", 
+      subscription = Subscription.create(title: "1 Tea Plan", 
                                          price: 10,
                                          frequency: "Weekly"   
                                         )
@@ -35,7 +35,7 @@ RSpec.describe "Customer Subscriptions Request" do
     it "returns an error message if customer email does not exist" do 
       tea = create(:tea)
       customer = create(:customer)
-      subscription = Subscription.create(title: "1 Tea", 
+      subscription = Subscription.create(title: "1 Tea Plan", 
                                          price: 10,
                                          frequency: "Weekly"   
                                         )
@@ -66,7 +66,7 @@ RSpec.describe "Customer Subscriptions Request" do
     it "returns an error message if subscription type does not exist" do 
       tea = create(:tea)
       customer = create(:customer)
-      subscription = Subscription.create(title: "3 Tea", 
+      subscription = Subscription.create(title: "3 Tea Plan", 
                                          price: 10,
                                          frequency: "Weekly"   
                                         )
@@ -97,14 +97,14 @@ RSpec.describe "Customer Subscriptions Request" do
     it "returns an error message if tea type does not exist" do 
       tea = create(:tea)
       customer = create(:customer)
-      subscription = Subscription.create(title: "3 Tea", 
+      subscription = Subscription.create(title: "3 Tea Plan", 
                                          price: 10,
                                          frequency: "Weekly"   
                                         )
 
       subscription_params = { 
                               customer: customer.email, 
-                              subscription: "3 Tea", 
+                              subscription: "3 Tea Plan", 
                               tea: "Expresso", 
                             }
       

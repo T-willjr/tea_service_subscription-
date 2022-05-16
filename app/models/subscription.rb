@@ -10,4 +10,9 @@ class Subscription < ApplicationRecord
 
   enum status: { "Active" => 1, "Cancelled" => 2 }
   enum frequency: { "Weekly" => 1, "Bi-Weekly" => 2 }
+
+  def cancel
+    self.status = 2 
+    self.save
+  end 
 end

@@ -4,7 +4,11 @@ class Customer < ApplicationRecord
   validates_presence_of :email
   validates_presence_of :address
   
-  has_one :customer_subscription
-  has_one :subscription, through: :customer_subscription
-  has_many :teas, through: :subscription
+  has_many :customer_subscriptions
+  has_many :subscriptions, through: :customer_subscriptions
+  has_many :teas, through: :subscriptions
+
+  def cancel_subscription(subscription_plan)
+    subscriptions.where(title: subscription_plan).first.cancel
+  end 
 end
