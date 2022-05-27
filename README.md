@@ -60,11 +60,13 @@ JSON Raw Body:
 ```
 ```
 Response:
-[
-    {
-      
-    }
-]
+{
+    "id": 2,
+    "customer_id": 1,
+    "subscription_id": 2,
+    "created_at": "2022-05-16T13:37:50.980Z",
+    "updated_at": "2022-05-16T13:37:50.980Z"
+}
 
 ```
 
